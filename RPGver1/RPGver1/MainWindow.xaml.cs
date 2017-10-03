@@ -21,20 +21,37 @@ namespace RPGver1
         {
             InitializeComponent();
             var foxDraw = new FoxDraw(canvas);
-            foxDraw.AddImage("./Assets/boss.png", 0, 0);
-        }
 
-        private void WindowKeyDown(object sender, KeyEventArgs e)
+            FloorPlan.DrawFloor(foxDraw);
+            FloorPlan.DrawWall(foxDraw);
+            Character.HeroStart(foxDraw);
+
+
+        }
+        void WindowKeyDown(object sender, KeyEventArgs e)
         {
             if (e.Key == Key.Left)
             {
-                Console.WriteLine("To the left!");
+               Character.HeroLeft();
             }
 
-            if (e.Key == Key.Right)
+            else if (e.Key == Key.Right)
             {
-                Console.WriteLine("To the right!");
+               Character.HeroRight();
             }
+
+            else if (e.Key == Key.Up)
+            {
+                Character.HeroUp();
+            }
+
+            else if (e.Key == Key.Down)
+            {
+                Character.HeroDown();
+            }
+
+
         }
+
     }
 }

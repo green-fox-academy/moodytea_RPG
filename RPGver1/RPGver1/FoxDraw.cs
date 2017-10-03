@@ -10,8 +10,8 @@ namespace GreenFox
 {
     public class FoxDraw
     {
-        private const int TILEWIDTH = 50;
-        private const int TILEHEIGHT = 50;
+        public readonly int TILEWIDTH = 50;
+        public readonly int TILEHEIGHT = 50;
 
         private Canvas Canvas { get; set; }
         private SolidColorBrush LineColor { get; set; } = SystemColors.WindowFrameBrush;
