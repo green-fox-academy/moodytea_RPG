@@ -10,14 +10,18 @@ namespace RPGver1
     class Character
     {
         public static int x = 50;
-        public static int y = 0;
+        public static int y = 50;
         
         public static FoxDraw foxDraw;
 
         public static void HeroLastPosition(int x, int y)
         {
-            if (x < 550 && x >= 50 && y < 500 && y >= 0)
-                foxDraw.AddImage("./Assets/floor.png", x, y);
+            if (x < 550 && x > 0 && y < 550 && y > 0)
+            {
+                FloorPlan.DrawFloor(foxDraw);
+                //FloorPlan.DrawWall(foxDraw);
+            }
+         
         }
 
         public static void HeroStart(FoxDraw foxDraw)
@@ -29,7 +33,7 @@ namespace RPGver1
         public static void HeroDown()
         {
             HeroLastPosition(x, y);
-            if ( y < 500)
+            if ( y <= 500)
             {
                 foxDraw.AddImage("./Assets/hero-down.png", x, y += foxDraw.TILEHEIGHT);
             }
@@ -47,22 +51,19 @@ namespace RPGver1
         public static void HeroRight()
         {
             HeroLastPosition(x, y);
-            if (x < 550)
+            if (x <= 500)
             {
                 foxDraw.AddImage("./Assets/hero-right.png", x += foxDraw.TILEWIDTH, y);
             }
-            
 
         }
         public static void HeroLeft()
         {
             HeroLastPosition(x, y);
-            if (x > 50)
+            if (x > 0)
             {
                 foxDraw.AddImage("./Assets/hero-left.png", x -= foxDraw.TILEWIDTH, y);
             }
-            
-
 
         }
 
