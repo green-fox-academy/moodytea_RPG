@@ -22,7 +22,6 @@ namespace RPGver1
             InitializeComponent();
             var foxDraw = new FoxDraw(canvas);
             FloorPlan.DrawFloor(foxDraw);
-           // FloorPlan.DrawWall(foxDraw);
             Character.HeroStart(foxDraw);
 
 

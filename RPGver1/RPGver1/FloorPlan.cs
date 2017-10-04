@@ -10,8 +10,8 @@ namespace RPGver1
     class FloorPlan
     {
         public static int n = 12;
-        public static int tile = 0;
-        public static int wall = 1;
+        //tile = 0;
+        //wall = 1;
 
         public static int[,] array = new int[n, n];
 
